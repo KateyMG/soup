@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from bs4 import BeautifulSoup
 import requests,sys, csv, json
+import os
 
 url="http://ufm.edu/Portal"
 # Make a GET request to fetch the raw HTML content
@@ -37,8 +38,8 @@ def phone_email():
     return print("GET the phone: " + phone +" "+"GET the mail: " + mail)
 
 def contar_href():
-    all_a = (len.soup.find_all('a', href=True))
-    return print("Total of <a>" + all_a)
+    all_a = len(soup.find_all('a', href=True))
+    return print("Total of <a> " + str(all_a))
 
 def nav_menu():
     soup.find
@@ -57,6 +58,24 @@ def nav_menu():
     json_menutable = {f"{id}": menutable_list}
     return (json_menutable)
 
+def href():
+    variables = soup.find_all('a', href=True)
+    longitud = len(soup.find_all('a', href=True))
+    if longitud<30:
+        print(variables.text)
+    else:
+        print("Output exceeds 30 lines, sending output to: hrefmayor30.txt")
+        file = open("hrefmayor30.txt", "w")
+        for i in range(longitud):
+            file.write(variables[i].text)
+        file.close()
+
+
+        file.close()
+
+
+
+
 
 title()
 print("---------------------------------------")
@@ -66,7 +85,9 @@ phone_email()
 print("---------------------------------------")
 nav_menu()
 print("---------------------------------------")
-
+contar_href()
+print("---------------------------------------")
+href()
 
 
 #for a in soup.find_all('a', href=True): ##Revisar en que linea está la dirección
