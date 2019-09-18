@@ -16,19 +16,33 @@ soup = BeautifulSoup(html_content, "html.parser")
 # print if needed, gets too noisy
 #print(soup.prettify())
 
-print(soup.title)
-print(soup.title.string)
+def title(): #Imprime titulo
+    title= soup.title
+    titles= soup.title.string
+    return print("GET the title and print it: " + titles)
 
-soup.find
-
-#t= soup.find_all("div", class_="span4")
-#for i in t:
-    #soup.find_all("a")
-    #print(soup.find_all("a"))
-t=0
+contador = 0
 links_with_text = []
-direccion = soup.find_all('a', href=True)
-t1 = direccion[291].text
+variables = soup.find_all('a', href=True)
+
+
+
+def direccion(): #Dirección
+    dire = variables[291].text
+    return print("GET the Complete Address of UFM: "+dire)
+
+def phone_email():
+    phone = variables[292].text
+    mail =  variables[293].text
+    return print("GET the phone: " + phone +" "+"GET the mail: " + mail)
+
+
+title()
+print("---------------------------------------")
+direccion()
+print("---------------------------------------")
+phone_email()
+
 
 #for a in soup.find_all('a', href=True): ##Revisar en que linea está la dirección
     ##t= t+1
