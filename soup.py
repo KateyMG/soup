@@ -19,6 +19,30 @@ soup = BeautifulSoup(html_content, "html.parser")
 print(soup.title)
 print(soup.title.string)
 
-for div in soup.find_all("div"):
-    print(div)
-    print("--------------------------")
+soup.find
+
+#t= soup.find_all("div", class_="span4")
+#for i in t:
+    #soup.find_all("a")
+    #print(soup.find_all("a"))
+t=0
+links_with_text = []
+direccion = soup.find_all('a', href=True)
+t1 = direccion[291].text
+
+#for a in soup.find_all('a', href=True): ##Revisar en que linea está la dirección
+    ##t= t+1
+    ##print(t)
+    ##print(a.text)
+
+
+
+
+#for div in soup.find_all("div"):
+    #soup.select("div a")
+    #print(soup.select("div a"))
+
+    #print(div)
+    #print("--------------------------")
+
+
