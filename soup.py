@@ -38,7 +38,24 @@ def phone_email():
 
 def contar_href():
     all_a = (len.soup.find_all('a', href=True))
-    return all_a
+    return print("Total of <a>" + all_a)
+
+def nav_menu():
+    soup.find
+    id = "menu-table"
+    nav_bar = soup.find_all("table", {"id": f"{id}"})
+
+    menutable_list = []
+    for i in nav_bar:
+        for j in i.find_all("div"):
+            div = j.string
+            if div is not None:
+                div = str(div).strip()
+                print(div)
+                menutable_list.append(div.strip())
+
+    json_menutable = {f"{id}": menutable_list}
+    return (json_menutable)
 
 
 title()
@@ -47,6 +64,9 @@ direccion()
 print("---------------------------------------")
 phone_email()
 print("---------------------------------------")
+nav_menu()
+print("---------------------------------------")
+
 
 
 #for a in soup.find_all('a', href=True): ##Revisar en que linea está la dirección
