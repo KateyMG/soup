@@ -36,12 +36,17 @@ def phone_email():
     mail =  variables[293].text
     return print("GET the phone: " + phone +" "+"GET the mail: " + mail)
 
+def contar_href():
+    all_a = (len.soup.find_all('a', href=True))
+    return all_a
+
 
 title()
 print("---------------------------------------")
 direccion()
 print("---------------------------------------")
 phone_email()
+print("---------------------------------------")
 
 
 #for a in soup.find_all('a', href=True): ##Revisar en que linea está la dirección
