@@ -70,8 +70,23 @@ def href():
             file.write(variables[i].text)
         file.close()
 
+def miU_botton():
+    #id= "miu_"
+    #botton = soup.find_all('a', {"id": f"{id}"})
+    #print(botton)
+        for a in soup.find_all('a'):
+            if(a.text == "MiU"):
+                print(a.get('href'))  # for getting link
 
-        file.close()
+
+
+
+
+
+
+
+
+
 
 
 
@@ -88,7 +103,8 @@ print("---------------------------------------")
 contar_href()
 print("---------------------------------------")
 href()
-
+print("---------------------------------------")
+miU_botton()
 
 #for a in soup.find_all('a', href=True): ##Revisar en que linea está la dirección
     ##t= t+1
