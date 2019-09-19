@@ -203,7 +203,7 @@ using ["http://ufm.edu/Portal"](http://ufm.edu/Portal)
 using ["http://ufm.edu/Estudios"](http://ufm.edu/Estudios)
 
 - [ ] now navigate to  /Estudios (better if you obtain href from the DOM)
-- [ ] display all items from "topmenu" (8 in total)
+- [X] display all items from "topmenu" (8 in total)
 - [ ] display ALL "Estudios" (Doctorados/Maestrias/Posgrados/Licenciaturas/Baccalaureus)
 - [ ] display from "leftbar" all &lt;li> items (4 in total)
 - [ ] get and display all available social media with its links (href) "class=social pull-right"
@@ -213,7 +213,7 @@ using ["http://ufm.edu/Estudios"](http://ufm.edu/Estudios)
 ## 3. CS
 using ["https://fce.ufm.edu/carrera/cs/"](https://fce.ufm.edu/carrera/cs/)
 
-- [ ] GET title
+- [X] GET title
 - [ ] GET and display the href
 - [ ] Download the "FACULTAD de CIENCIAS ECONOMICAS" logo. (you need to obtain the link dynamically)
 - [ ] GET following &lt;meta>: "title", "description" ("og")
