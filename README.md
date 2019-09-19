@@ -218,7 +218,7 @@ using ["https://fce.ufm.edu/carrera/cs/"](https://fce.ufm.edu/carrera/cs/)
 - [X] Download the "FACULTAD de CIENCIAS ECONOMICAS" logo. (you need to obtain the link dynamically)
 - [X] GET following &lt;meta>: "title", "description" ("og")
 - [X] count all &lt;a> (just display the count)
-- [ ] count all &lt;div> (just display the count)
+- [X] count all &lt;div> (just display the count)
 
 
 ## 4. Directorio
