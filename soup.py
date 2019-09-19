@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from bs4 import BeautifulSoup
-import requests,sys, csv, json
+import requests,sys, csv, json, time
 import os
 
 url="http://ufm.edu/Portal"
@@ -59,11 +59,12 @@ def href():
     if longitud<30:
         result = variables.text
     else:
+        ahora = time.strftime("%c")
         file = open("hrefmayor30.txt", "w")
         for i in range(longitud):
             file.write(variables[i].text)
         file.close()
-        result = "Output exceeds 30 lines, sending output to: hrefmayor30.txt"
+        result = "Output exceeds 30 lines, sending output to: hrefmayor30.txt\nDate of generation: "+ahora
     return print(result)
 
 def mail_botton():
