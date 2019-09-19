@@ -78,9 +78,10 @@ def miU_botton():
             if(a.text == "MiU"):
                 print(a.get('href'))  # for getting link
 
-
-
-
+def mail_botton():
+        for a in soup.find_all('a'):
+            if(a.text == "UFMail"):
+                print(a.get('href'))
 
 
 
@@ -105,6 +106,8 @@ print("---------------------------------------")
 href()
 print("---------------------------------------")
 miU_botton()
+print("---------------------------------------")
+mail_botton()
 
 #for a in soup.find_all('a', href=True): ##Revisar en que linea está la dirección
     ##t= t+1
