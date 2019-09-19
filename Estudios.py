@@ -48,7 +48,13 @@ def leftbar():
     for data in soup.findAll('div', {'class': 'leftbar'}):
         for a in data.find_all('a'):
             print("- "+a.text)
+            link = a.get('href')
 
+def socialmedia():
+    print("Get and display all available social media")
+    for data in soup.findAll('div', {'class': 'social pull-right'}):
+        for a in data.find_all('a'):
+            print("- "+a.get('href'))
 
 
 variables = soup.find_all('a', href=True)
@@ -57,12 +63,13 @@ def contar_a():
     return print("Total of <a> " + str(all_a))
 
 print("2. Estudios")
-print("---------------------------------------")
+print(" ")
 topmenu()
 print("---------------------------------------")
 estudios()
 print("---------------------------------------")
 leftbar()
 print("---------------------------------------")
-contar_a()
+socialmedia()
 print("---------------------------------------")
+contar_a()
