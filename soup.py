@@ -83,10 +83,11 @@ def mail_botton():
             if(a.text == "UFMail"):
                 print(a.get('href'))
 
-
-
-
-
+def images():
+        for a in soup.find_all('a'):
+            x= len(a.find_all('img'))
+            if(x>0):
+                print(a.get('href'))
 
 
 
@@ -108,6 +109,8 @@ print("---------------------------------------")
 miU_botton()
 print("---------------------------------------")
 mail_botton()
+print("---------------------------------------")
+images()
 
 #for a in soup.find_all('a', href=True): ##Revisar en que linea está la dirección
     ##t= t+1
