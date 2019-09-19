@@ -171,15 +171,15 @@ Universidad Francisco Marroquín
 ## 1. Portal
 using ["http://ufm.edu/Portal"](http://ufm.edu/Portal)
 
-- [ ] GET the title and print it
-- [ ] GET the Complete Address of UFM
-- [ ] GET the phone number and info email
-- [ ] GET all item that are part of the upper nav menu (id: menu-table)
-- [ ] find all properties that have href (link to somewhere)
-- [ ] GET href of "UFMail" button
-- [ ] GET href "MiU" button.
-- [ ] get hrefs of all &lt;img>
-- [ ] count all &lt;a>
+- [X] GET the title and print it
+- [X] GET the Complete Address of UFM
+- [X] GET the phone number and info email
+- [X] GET all item that are part of the upper nav menu (id: menu-table)
+- [X] find all properties that have href (link to somewhere)
+- [X] GET href of "UFMail" button
+- [X] GET href "MiU" button.
+- [X] get hrefs of all &lt;img>
+- [X] count all &lt;a>
 
 
 ### 1.1 Extra points
