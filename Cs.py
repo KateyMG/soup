@@ -13,5 +13,16 @@ except:
 # Parse the html content, this is the Magic ;)
 soup = BeautifulSoup(html_content, "html.parser")
 
-print(soup.title)
-print(soup.title.string)
+def title(): #Imprime titulo
+    title= soup.title
+    titles= soup.title.string
+    return print("GET the title and print it: " + titles)
+
+def contar_a():
+    all_a = len(soup.find_all('a', href=True))
+    return print("Total of <a> " + str(all_a))
+
+
+title()
+print("---------------------------------------")
+contar_a()
