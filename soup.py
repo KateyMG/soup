@@ -20,7 +20,7 @@ soup = BeautifulSoup(html_content, "html.parser")
 def title(): #Imprime titulo
     title= soup.title
     titles= soup.title.string
-    return print("GET the title and print it: " + titles)
+    return print("GET the title and print it: <" + titles+">")
 
 contador = 0
 links_with_text = []
@@ -28,29 +28,30 @@ variables = soup.find_all('a', href=True)
 
 def direccion(): #Obtener la Dirección completa
     dire = variables[291].text
-    return print("GET the Complete Address of UFM: "+dire)
+    return print("GET the Complete Address of UFM: <"+dire+">")
 
 def phone_email(): #Obtener el número de telefono más email
     phone = variables[292].text
     mail =  variables[293].text
-    return print("GET the phone: " + phone +" "+"GET the mail: " + mail)
+    return print("GET the phone: <" + phone +">  \n"+"GET the mail: <" + mail+">")
 
 def nav_menu(): #Obenter los items de la nav menu
+    print("GET all item that are part of the upper nav menu: ")
     soup.find
     id = "menu-table"
     nav_bar = soup.find_all("table", {"id": f"{id}"})
-
     menutable_list = []
+    #print("GET all item that are part of the upper nav menu (id: menu-table)")
     for i in nav_bar:
         for j in i.find_all("div"):
             div = j.string
             if div is not None:
                 div = str(div).strip()
-                print(div)
+                print("- "+div)
                 menutable_list.append(div.strip())
 
-    json_menutable = {f"{id}": menutable_list}
-    return (json_menutable)
+    #json_menutable = {f"{id}": menutable_list}
+
 
 def href():
     variables = soup.find_all('a', href=True)
@@ -69,7 +70,7 @@ def mail_botton():
     for a in soup.find_all('a'):
         if (a.text == "UFMail"):
             links= a.get('href')
-    return print("GET href of UFMail button: "+ links)
+    return print("GET href of UFMail button: <"+ links+">")
 
 
 def miU_botton():
@@ -79,24 +80,24 @@ def miU_botton():
     for a in soup.find_all('a'):
         if(a.text == "MiU"):
             link= a.get('href')  # for getting link
-    return print("GET href MiU button: "+ link)
+    return print("GET href MiU button: <"+ link+">")
 
 def contar_a():
     all_a = len(soup.find_all('a', href=True))
-    return print("Total of <a> " + str(all_a))
+    return print("Total of <a>: <" + str(all_a)+">")
 
 def images():
+    print("Get hrefs of all img")
     for a in soup.find_all('a'):
         x= len(a.find_all('img'))
         if(x>0):
-            print(a.get('href'))
-    return print("Get hrefs of all <img>: ")
+            print("- "+a.get('href'))
 
 
 
 
-
-
+print("1. Portal")
+print(" ")
 title()
 print("---------------------------------------")
 direccion()
