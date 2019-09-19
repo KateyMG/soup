@@ -35,6 +35,14 @@ def contar_a():
     all_a = len(soup.find_all('a', href=True))
     return print("Total of <a> " + str(all_a))
 
+def meta():
+    for data in soup.findAll('meta', {'property': 'og:title'}):
+        content = data.get('content')
+    for data in soup.findAll('meta', {'property': 'og:description'}):
+        descripcion= data.get('content')
+    return print("GET following <meta>: \n"+"title: "+content+"\n" + "description: "+descripcion)
+
+
 
 title()
 print("---------------------------------------")
@@ -42,3 +50,4 @@ logo()
 print("---------------------------------------")
 contar_a()
 print("---------------------------------------")
+meta()
