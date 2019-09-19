@@ -42,12 +42,16 @@ def meta():
         descripcion= data.get('content')
     return print("GET following <meta>: \n"+"title: "+content+"\n" + "description: "+descripcion)
 
-
-
+def contar_div():
+    all_div = len(soup.find_all('div'))
+    return print("Total of <div> " + str(all_div))
+print("Part 3\n")
 title()
 print("---------------------------------------")
 logo()
 print("---------------------------------------")
+meta()
+print("---------------------------------------")
 contar_a()
 print("---------------------------------------")
-meta()
+contar_div()
