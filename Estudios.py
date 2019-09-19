@@ -2,7 +2,7 @@
 from bs4 import BeautifulSoup
 import requests,sys, csv, json
 
-url="https://ufm.edu/Estudios"
+url="https://ufm.edu/Estudios" #Navigate to /Estudios
 
 # Make a GET request to fetch the raw HTML content
 try:
@@ -13,7 +13,8 @@ except:
 
 # Parse the html content, this is the Magic ;)
 soup = BeautifulSoup(html_content, "html.parser")
-print(soup.title)
+
+print(soup.title) #tittle of the page
 print(soup.title.string)
 
 def topmenu():
@@ -51,9 +52,14 @@ def estudios():
     json_menutable = {f"{id}": menutable_list}
     return (json_menutable)
 
+variables = soup.find_all('a', href=True)
+def contar_a():
+    all_a = len(soup.find_all('a', href=True))
+    return print("Total of <a> " + str(all_a))
 
-
-
-
+print("---------------------------------------")
 topmenu()
+print("---------------------------------------")
 estudios()
+print("---------------------------------------")
+contar_a()
