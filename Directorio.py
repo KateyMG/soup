@@ -51,10 +51,20 @@ def count_emails():
     #print(len(mail))
     #print(mail)
 
-def
+def Json_Address():
+
+    Address = soup.find_all("table", {'class': 'tabla ancho100'})
+    for i in Address:
+        print(soup.find_all('td', i))
+
+
+
+
+    #print (Address)
 
 
 email()
 print("---------------------------------------")
 count_emails()
 print("---------------------------------------")
+Json_Address()
