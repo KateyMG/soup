@@ -14,38 +14,47 @@ except:
 soup = BeautifulSoup(html_content, "html.parser")
 
 
-def email():
-    #patron = re.match("mailto", )
-    ahora = time.strftime("%c")
-    print("Sort all emails alphabetically")
-    mail=[]
-    mailto=[]
-    for data in soup.findAll('a', {'class': 'external text'}):
+
+
+mail=[]
+mailto=[]
+for data in soup.findAll('a', {'class': 'external text'}):
         #x= data.get('href')
         mail.append(data.get('href'))
-    for i in mail:
-        patron =re.match ("mailto", i)
-        if(patron != None):
-            separar= re.split("mailto:", i)
-            mailto.append(separar[1])
+for i in mail:
+    patron =re.match ("mailto", i)
+    if(patron != None):
+        separar= re.split("mailto:", i)
+        mailto.append(separar[1])
     #print(mailto)#no ordenado
     mailto.sort()
     #print(mailto) #ordenado
+
+
+def email():
+    #patron = re.match("mailto", )
+    ahora = time.strftime("%c")
     file = open("emails.txt", "w")
     for i in mailto:
         file.write(i+"\n")
     file.close()
     return print("Sending output to: emails.txt\nDate of generation: "+ahora)
 
-
-
-
-
-
-
-
+def count_emails():
+    cont = 0
+    for i in mailto:
+        patron = re.match("(a|e|i|o|u)", i)
+        if(patron != None):
+            cont = cont+1
+    #print(cont)
+    return print("Emails that start with a vowel: "+ str(cont))
     #print(len(mail))
     #print(mail)
 
+def
+
 
 email()
+print("---------------------------------------")
+count_emails()
+print("---------------------------------------")
