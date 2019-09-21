@@ -14,9 +14,6 @@ except:
 # Parse the html content, this is the Magic ;)
 soup = BeautifulSoup(html_content, "html.parser")
 
-print(soup.title) #tittle of the page
-print(soup.title.string)
-
 def topmenu():
     print("Display all items from topmenu")
     soup.find
@@ -73,3 +70,4 @@ print("---------------------------------------")
 socialmedia()
 print("---------------------------------------")
 contar_a()
+print("============================================================")

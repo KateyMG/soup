@@ -45,7 +45,7 @@ def meta():
 def contar_div():
     all_div = len(soup.find_all('div'))
     return print("Total of <div> " + str(all_div))
-print("Part 3\n")
+print("3. CS\n")
 title()
 print("---------------------------------------")
 logo()
@@ -55,3 +55,4 @@ print("---------------------------------------")
 contar_a()
 print("---------------------------------------")
 contar_div()
+print("============================================================")
