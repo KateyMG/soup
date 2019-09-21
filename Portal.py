@@ -94,9 +94,6 @@ def images():
         if(x>0):
             print("- "+a.get('href'))
 
-
-
-
 print("1. Portal")
 print(" ")
 title()

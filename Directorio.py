@@ -57,9 +57,7 @@ def Json_Address():
     for i in Address:
         print(soup.find_all('td', i))
 
-
-
-
+#def CSV():
     #print (Address)
 
 print ("Directorio\n")
@@ -67,4 +65,4 @@ email()
 print("---------------------------------------")
 count_emails()
 print("---------------------------------------")
-Json_Address()
+#Json_Address()

@@ -15,6 +15,7 @@ def main(argv):
           os.system("python Portal.py")
           os.system("python Estudios.py")
           os.system("python Cs.py")
+          os.system("Python Directorio.by")
           #os.system("python Directorio.py")
       else:
           opts = int(sys.argv[1])
