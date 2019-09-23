@@ -226,7 +226,7 @@ using ["https://www.ufm.edu/Directorio"](https://www.ufm.edu/Directorio)
 
 - [X] Sort all emails alphabetically (`href="mailto:arquitectura@ufm.edu"`) in a list, dump it to logs/4directorio_emails.txt
 - [X] Count all emails that start with a vowel. (just display the count)
-- [ ] Group in a JSON all rows that have `Same Address` (dont use Room number) as address, dump it to logs/4directorio_address.json
+- [X] Group in a JSON all rows that have `Same Address` (dont use Room number) as address, dump it to logs/4directorio_address.json
 
 
 ```javascript
@@ -252,7 +252,7 @@ using ["https://www.ufm.edu/Directorio"](https://www.ufm.edu/Directorio)
 }
 ```
 
-- [ ] Try to correlate in a JSON Faculty Dean and Directors, and dump it to `logs/4directorio_deans.json`
+- [X] Try to correlate in a JSON Faculty Dean and Directors, and dump it to `logs/4directorio_deans.json`
 
 ```javascript
 {
@@ -282,8 +282,8 @@ using ["https://www.ufm.edu/Directorio"](https://www.ufm.edu/Directorio)
 
 
 ## 5. Extra
-- [ ] Complete Dockerfile
-- [ ] Create README section for Dockerfile under [`Usage Dockerfile`](#usage-dockerfile)
+- [X] Complete Dockerfile
+- [X] Create README section for Dockerfile under [`Usage Dockerfile`](#usage-dockerfile)
 - [ ] Add CI to your own repo.
 
 
