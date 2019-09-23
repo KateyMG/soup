@@ -34,7 +34,7 @@ for i in mail:
 def email():
     #patron = re.match("mailto", )
     ahora = time.strftime("%c")
-    file = open("emails.txt", "w")
+    file = open("logs\emails.txt", "w")
     for i in mailto:
         file.write(i+"\n")
     file.close()
@@ -57,12 +57,14 @@ def Json_Address():
     for i in Address:
         print(soup.find_all('td', i))
 
+
 #def CSV():
     #print (Address)
 
-print ("Directorio\n")
+print ("4. Directorio\n")
 email()
 print("---------------------------------------")
 count_emails()
 print("---------------------------------------")
 #Json_Address()
+#get_adress()

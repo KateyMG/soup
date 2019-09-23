@@ -15,7 +15,7 @@ def main(argv):
           os.system("python Portal.py")
           os.system("python Estudios.py")
           os.system("python Cs.py")
-          os.system("Python Directorio.by")
+          os.system("python Directorio.py")
           #os.system("python Directorio.py")
       else:
           opts = int(sys.argv[1])
@@ -27,7 +27,7 @@ def main(argv):
           elif(opts == 3):
               os.system("python Cs.py")
           elif(opts == 4):
-              os.system("python Directorios.py")
+              os.system("python Directorio.py")
           else:
               print("No se puede ejecutar nada")
 

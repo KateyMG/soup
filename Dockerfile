@@ -1,3 +1,12 @@
 FROM python:3-alpine
+WORKDIR /soup.py
+COPY requirements.txt .
 
-ENV DEVELOPER="Marcos Cano"
+RUN pip install -r requirements.txt
+
+COPY . ./
+
+CMD [ "python", "soup.py" ]
+
+
+ENV DEVELOPER="Katherine Mazariegos"

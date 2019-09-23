@@ -60,7 +60,7 @@ def href():
         result = variables.text
     else:
         ahora = time.strftime("%c")
-        file = open("hrefmayor30.txt", "w")
+        file = open("logs\hrefmayor30.txt", "w")
         for i in range(longitud):
             file.write(variables[i].text)
         file.close()

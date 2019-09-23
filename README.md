@@ -307,9 +307,15 @@ In order to start your project:
 - [x] everytime you complete an "item" make sure to mark it as done [x]
 
 ## Usage Dockerfile
+First you build the image with the command shown below.
 ```bash
-Put your Docker build/run/etc commands here
+docker build --rm -f "soup\Dockerfile" -t soup:latest soup
 ```
+Then you run the newly created container with the following command.
+```bash
+docker run soup:latest
+```
+
 
 ---
 # Delivery
