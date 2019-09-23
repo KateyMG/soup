@@ -81,8 +81,8 @@ def Json_Address():
             if j == i[0]:
                 nombres[j].append(i[1])
 
-    with open('logs/4directorio_address.json', 'w+') as file:
-        json.dump(nombres, file, indent=4)
+    with open('logs/4directorio_address.json', 'w+', encoding='utf-8') as file:
+        json.dump(nombres, file,ensure_ascii=False, indent=4)
     ahora = time.strftime("%c")
     return print("Sending output to: 4directorio_address.txt\nDate of generation: " + ahora)
 
@@ -118,13 +118,23 @@ def Dean_Direc():
                 Fac[j].append(i[1])
                 Fac[j].append(i[2])
 
-    with open('logs/4directorio_decanos.json', 'w+') as file:
-        json.dump(Fac, file, indent=4)
+    with open('logs/4directorio_decanos.json', 'w+', encoding='utf-8') as file:
+        json.dump(Fac, file, ensure_ascii=False, indent=4)
     ahora = time.strftime("%c")
     return print("Sending output to: 4directorio_decanos.txt\nDate of generation: " + ahora)
 
 def CSV():
- print("x")
+
+    Address = soup.find_all("table", {'class': 'tabla ancho100 col3'})
+
+    csvData = [['Person', 'Age'], ['Peter', '22'], ['Jasmine', '21'], ['Sam', '24']]
+    with open('logs/4directorio_3column_tables.csv', 'w') as csvFile:
+        writer = csv.writer(csvFile)
+        writer.writerows(csvData)
+    csvFile.close()
+    ahora = time.strftime("%c")
+    print("Sending output to: logs/4directorio_3column_tables.csv\nDate of generation: "+ahora)
+
 
 
 
@@ -137,3 +147,4 @@ Json_Address()
 print("---------------------------------------")
 Dean_Direc()
 print("---------------------------------------")
+CSV()
