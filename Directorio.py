@@ -34,7 +34,7 @@ for i in mail:
 def email():
     #patron = re.match("mailto", )
     ahora = time.strftime("%c")
-    file = open("logs\emails.txt", "w")
+    file = open("logs/4directorio_emails.txt", "w")
     for i in mailto:
         file.write(i+"\n")
     file.close()
@@ -52,18 +52,88 @@ def count_emails():
     #print(mail)
 
 def Json_Address():
+    nombres = {}
+    data = []
+
     Address = soup.find_all("table", {'class': 'tabla ancho100'})
-    for i in Address:
-        print(soup.find_all('td', i)) #Todos los td´s que quiero estan en los 5
+    #print(Address)
+    for i in Address[0].find_all('tr'):
+        #print(soup.find_all('tr', i)) #Todos los td´s que quiero estan en los 5
+        td = i.find_all('td')
+        #print(len(td))#todos miden 5
+        #print((td[4]).text)
+        temp = []
+        if len(td) == 5:
+            #print((td[4]).text)#Edificio
+            # print((td[0]).text)#Facultad o lo que está ahi
+            Ed = td[4].text.strip().split(',')[0]
+            #print(Ed)
+            Fac = td[0].text.strip()
+            #print(Fac)
+            temp.append(Ed)
+            temp.append(Fac)
+            data.append(temp)
+    #print(Result)
+    for i in data:
+        nombres[i[0]] = []
+    for i in data:
+        for j, k in nombres.items():
+            if j == i[0]:
+                nombres[j].append(i[1])
+
+    with open('logs/4directorio_address.json', 'w+') as file:
+        json.dump(nombres, file, indent=4)
+    ahora = time.strftime("%c")
+    return print("Sending output to: 4directorio_address.txt\nDate of generation: " + ahora)
+
+def Dean_Direc():
+    Fac = {}
+    data = []
+    Address = soup.find_all("table", {'class': 'tabla ancho100 col3'})
+    #print(Address)
+    for i in Address[1].find_all('tr'):
+        # print(soup.find_all('tr', i))
+        td = i.find_all('td')
+        #print(len(td))#todos miden 3
+        temp = []
+        if len(td) == 3:
+            #print((td[0]).text)#Facultad o Entidad
+            #print((td[1]).text)#Decano, director
+            #print((td[2]).text)#email
+            Decano = td[1].text.strip().split(',')[0]
+            #print(Decano) #sin comas
+            Facu = td[0].text.strip()
+            email = td[2].text.strip()
+            temp.append(Facu)
+            temp.append("Dean/Director: " + Decano)
+            temp.append("email: " + email)
+            data.append(temp)
+        #print(Info)
+
+    for i in data:
+        Fac[i[0]] = []
+    for i in data:
+        for j, k in Fac.items():
+            if j == i[0]:
+                Fac[j].append(i[1])
+                Fac[j].append(i[2])
+
+    with open('logs/4directorio_decanos.json', 'w+') as file:
+        json.dump(Fac, file, indent=4)
+    ahora = time.strftime("%c")
+    return print("Sending output to: 4directorio_decanos.txt\nDate of generation: " + ahora)
+
+def CSV():
+ print("x")
 
 
-#def CSV():
-    #print (Address)
 
 print ("4. Directorio\n")
 email()
 print("---------------------------------------")
 count_emails()
 print("---------------------------------------")
-#Json_Address()
-#get_adress()
+Json_Address()
+print("---------------------------------------")
+Dean_Direc()
+print("---------------------------------------")
