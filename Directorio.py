@@ -52,10 +52,9 @@ def count_emails():
     #print(mail)
 
 def Json_Address():
-
     Address = soup.find_all("table", {'class': 'tabla ancho100'})
     for i in Address:
-        print(soup.find_all('td', i))
+        print(soup.find_all('td', i)) #Todos los td´s que quiero estan en los 5
 
 
 #def CSV():
