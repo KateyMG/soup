@@ -9,4 +9,3 @@ COPY . ./
 CMD [ "python", "soup.py" ]
 
 
-ENV DEVELOPER="Katherine Mazariegos"
