@@ -145,7 +145,7 @@ python3 soup.py 3
 
 <br>
 
-- [ ] **NOTE** If for some reason the result exceeds 30 lines you will display `"Output exceeds 30 lines, sending output to: <logfile>"` and send the output to a text file inside logs/ , example format:
+- [X] **NOTE** If for some reason the result exceeds 30 lines you will display `"Output exceeds 30 lines, sending output to: <logfile>"` and send the output to a text file inside logs/ , example format:
 
 ```bash
 $ python3 soup.py 1
@@ -171,15 +171,15 @@ Universidad Francisco Marroquín
 ## 1. Portal
 using ["http://ufm.edu/Portal"](http://ufm.edu/Portal)
 
-- [ ] GET the title and print it
-- [ ] GET the Complete Address of UFM
-- [ ] GET the phone number and info email
-- [ ] GET all item that are part of the upper nav menu (id: menu-table)
-- [ ] find all properties that have href (link to somewhere)
-- [ ] GET href of "UFMail" button
-- [ ] GET href "MiU" button.
-- [ ] get hrefs of all &lt;img>
-- [ ] count all &lt;a>
+- [X] GET the title and print it
+- [X] GET the Complete Address of UFM
+- [X] GET the phone number and info email
+- [X] GET all item that are part of the upper nav menu (id: menu-table)
+- [X] find all properties that have href (link to somewhere)
+- [X] GET href of "UFMail" button
+- [X] GET href "MiU" button.
+- [X] get hrefs of all &lt;img>
+- [X] count all &lt;a>
 
 
 ### 1.1 Extra points
@@ -202,31 +202,31 @@ using ["http://ufm.edu/Portal"](http://ufm.edu/Portal)
 ## 2. Estudios
 using ["http://ufm.edu/Estudios"](http://ufm.edu/Estudios)
 
-- [ ] now navigate to  /Estudios (better if you obtain href from the DOM)
-- [ ] display all items from "topmenu" (8 in total)
-- [ ] display ALL "Estudios" (Doctorados/Maestrias/Posgrados/Licenciaturas/Baccalaureus)
-- [ ] display from "leftbar" all &lt;li> items (4 in total)
-- [ ] get and display all available social media with its links (href) "class=social pull-right"
-- [ ] count all &lt;a> (just display the count)
+- [X] now navigate to  /Estudios (better if you obtain href from the DOM)
+- [X] display all items from "topmenu" (8 in total)
+- [X] display ALL "Estudios" (Doctorados/Maestrias/Posgrados/Licenciaturas/Baccalaureus)
+- [X] display from "leftbar" all &lt;li> items (4 in total)
+- [X] get and display all available social media with its links (href) "class=social pull-right"
+- [X] count all &lt;a> (just display the count)
 
 
 ## 3. CS
 using ["https://fce.ufm.edu/carrera/cs/"](https://fce.ufm.edu/carrera/cs/)
 
-- [ ] GET title
-- [ ] GET and display the href
-- [ ] Download the "FACULTAD de CIENCIAS ECONOMICAS" logo. (you need to obtain the link dynamically)
-- [ ] GET following &lt;meta>: "title", "description" ("og")
-- [ ] count all &lt;a> (just display the count)
-- [ ] count all &lt;div> (just display the count)
+- [X] GET title
+<!-- Esto se comento porque no se hace [ ] GET and display the href -->
+- [X] Download the "FACULTAD de CIENCIAS ECONOMICAS" logo. (you need to obtain the link dynamically)
+- [X] GET following &lt;meta>: "title", "description" ("og")
+- [X] count all &lt;a> (just display the count)
+- [X] count all &lt;div> (just display the count)
 
 
 ## 4. Directorio
 using ["https://www.ufm.edu/Directorio"](https://www.ufm.edu/Directorio)
 
-- [ ] Sort all emails alphabetically (`href="mailto:arquitectura@ufm.edu"`) in a list, dump it to logs/4directorio_emails.txt
-- [ ] Count all emails that start with a vowel. (just display the count)
-- [ ] Group in a JSON all rows that have `Same Address` (dont use Room number) as address, dump it to logs/4directorio_address.json
+- [X] Sort all emails alphabetically (`href="mailto:arquitectura@ufm.edu"`) in a list, dump it to logs/4directorio_emails.txt
+- [X] Count all emails that start with a vowel. (just display the count)
+- [X] Group in a JSON all rows that have `Same Address` (dont use Room number) as address, dump it to logs/4directorio_address.json
 
 
 ```javascript
@@ -252,7 +252,7 @@ using ["https://www.ufm.edu/Directorio"](https://www.ufm.edu/Directorio)
 }
 ```
 
-- [ ] Try to correlate in a JSON Faculty Dean and Directors, and dump it to `logs/4directorio_deans.json`
+- [X] Try to correlate in a JSON Faculty Dean and Directors, and dump it to `logs/4directorio_deans.json`
 
 ```javascript
 {
@@ -272,7 +272,7 @@ using ["https://www.ufm.edu/Directorio"](https://www.ufm.edu/Directorio)
 }
 ```
 
-- [ ] GET the directory of all 3 column table and generate a CSV with these columns (Entity,FullName, Email), and dump it to `logs/4directorio_3column_tables.csv`
+- [X] GET the directory of all 3 column table and generate a CSV with these columns (Entity,FullName, Email), and dump it to `logs/4directorio_3column_tables.csv`
 
 | Entity        	| FullName                	| Email            	|
 |---------------	|-------------------------	|------------------	|
@@ -282,8 +282,8 @@ using ["https://www.ufm.edu/Directorio"](https://www.ufm.edu/Directorio)
 
 
 ## 5. Extra
-- [ ] Complete Dockerfile
-- [ ] Create README section for Dockerfile under [`Usage Dockerfile`](#usage-dockerfile)
+- [X] Complete Dockerfile
+- [X] Create README section for Dockerfile under [`Usage Dockerfile`](#usage-dockerfile)
 - [ ] Add CI to your own repo.
 
 
@@ -307,9 +307,15 @@ In order to start your project:
 - [x] everytime you complete an "item" make sure to mark it as done [x]
 
 ## Usage Dockerfile
+First you build the image with the command shown below.
 ```bash
-Put your Docker build/run/etc commands here
+docker build --rm -f "soup\Dockerfile" -t soup:latest soup
 ```
+Then you run the newly created container with the following command.
+```bash
+docker run soup:latest
+```
+
 
 ---
 # Delivery

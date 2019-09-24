@@ -1,24 +1,39 @@
-#!/usr/bin/env python3
-from bs4 import BeautifulSoup
-import requests,sys,csv,json
+import sys, getopt
+import os
 
-url="http://ufm.edu/Portal"
-# Make a GET request to fetch the raw HTML content
-try:
-    html_content = requests.get(url).text
-except:
-    print(f"unable to get {url}")
-    sys.exit(1)
 
-# Parse the html content, this is the Magic ;)
-soup = BeautifulSoup(html_content, "html.parser")
+def main(argv):
+   inputfile = ''
+   outputfile = ''
+   #print(len(sys.argv))
+   tam = len(sys.argv)  
+   try:
+      print("Katherine Mazariegos")
+      if (tam == 1):
+          #print("Sin argumento")
+          os.system("python Portal.py")
+          os.system("python Estudios.py")
+          os.system("python Cs.py")
+          os.system("python Directorio.py")
+          #os.system("python Directorio.py")
+      else:
+          opts = int(sys.argv[1])
+          #print(type(opts))
+          if(opts ==1):
+              os.system("python Portal.py")
+          elif(opts ==2):
+              os.system("python Estudios.py")
+          elif(opts == 3):
+              os.system("python Cs.py")
+          elif(opts == 4):
+              os.system("python Directorio.py")
+          else:
+              print("No se puede ejecutar nada")
 
-# print if needed, gets too noisy
-#print(soup.prettify())
+   except getopt.GetoptError:
+      print ('test.py -i <inputfile>' )
+      sys.exit(2)
 
-print(soup.title)
-print(soup.title.string)
 
-for div in soup.find_all("div"):
-    print(div)
-    print("--------------------------")
+if __name__ == "__main__":
+   main(sys.argv)
