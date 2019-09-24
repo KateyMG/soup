@@ -6,8 +6,7 @@ def main(argv):
    inputfile = ''
    outputfile = ''
    #print(len(sys.argv))
-   tam = len(sys.argv)
-
+   tam = len(sys.argv)  
    try:
       print("Katherine Mazariegos")
       if (tam == 1):

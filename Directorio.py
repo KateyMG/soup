@@ -27,7 +27,6 @@ for i in mail:
     mailto.sort()
     #print(mailto) #ordenado
 
-
 def email():
     #patron = re.match("mailto", )
     ahora = time.strftime("%c")
@@ -176,3 +175,4 @@ print("---------------------------------------")
 Dean_Direc()
 print("---------------------------------------")
 CSV()
+print("============================================================")
